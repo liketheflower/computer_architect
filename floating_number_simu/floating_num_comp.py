@@ -26,18 +26,18 @@ def get_ieee_floating_numbers(a,b):
     neg_results = [-_ for _ in non_neg_results]
     return sorted(neg_results + non_neg_results)
 if  __name__=="__main__":
-    integer_bits, frac_bits = 4,8
-    
-    naive_floating = get_naive_floating_numbers( integer_bits, frac_bits)
+    integer_bits, frac_bits = 3,3
+    offset = 1    
+    naive_floating = get_naive_floating_numbers( integer_bits+offset, frac_bits-offset)
 #    print naive_floating
     ieee_floating  = get_ieee_floating_numbers ( integer_bits, frac_bits)
  #   print ieee_floating
     print "number of naive_floating, max,min",len(naive_floating),max(naive_floating), min(naive_floating)
     print "number of ieee_floating, max,min",len(ieee_floating),max(ieee_floating), min(ieee_floating)
     y = [1 for _ in xrange(len(naive_floating))]
-    plt.scatter(naive_floating, y, color="#ff0000")
+    plt.scatter(naive_floating, y, color="#ff0000",s=2, alpha=0.3)
     z =  [10 for _ in xrange(len(ieee_floating))]
-    plt.scatter(ieee_floating, z, color="#00ff00")
+    plt.scatter(ieee_floating, z,color="#00ff00", s =2,alpha=0.3)
     plt.show()
     plt.close()
     plt.hist(naive_floating,bins = 100 , alpha=0.5)
