@@ -41,6 +41,7 @@ def baseline_model():
 	return model
 # build the model
 model = baseline_model()
+print(model.summary())
 # Fit the model
 model.fit(X_train, y_train, validation_data=(X_test, y_test), epochs=10, batch_size=200)
 # Final evaluation of the model
