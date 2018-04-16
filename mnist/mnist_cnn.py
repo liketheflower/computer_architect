@@ -48,4 +48,4 @@ scores = model.evaluate(X_test, y_test, verbose=0)
 print("CNN Error: %.2f%%" % (100-scores[1]*100))
 prediction = model.predict(X_test, y_test)
 
-print prediction
+print (prediction)
