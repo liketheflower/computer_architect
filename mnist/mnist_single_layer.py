@@ -11,7 +11,7 @@ numpy.random.seed(seed)
 # load data
 
 (X_train, y_train), (X_test, y_test) = mnist.load_data()
-
+print("the shape of X_train",X_train.shape)
 # flatten 28*28 images to a 784 vector for each image
 num_pixels = X_train.shape[1] * X_train.shape[2]
 print ("before",X_train.shape)
@@ -32,7 +32,7 @@ def baseline_model():
     # create model
     model = Sequential()
     model.add(Dense(num_pixels, input_dim=num_pixels, kernel_initializer='normal', activation='relu'))
-    model.add(Dense( 32, kernel_initializer='normal', activation='relu'))
+    model.add(Dense( 100, kernel_initializer='normal', activation='relu'))
     model.add(Dense(num_classes, kernel_initializer='normal', activation='softmax'))
     # Compile model
     model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
