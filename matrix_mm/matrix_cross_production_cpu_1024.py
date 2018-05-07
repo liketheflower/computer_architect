@@ -3,9 +3,9 @@ import time
 
 start = time.time()
 
-#dtype = torch.FloatTensor
-dtype = torch.cuda.FloatTensor # Uncomment this to run on GPU
-N = 100000
+dtype = torch.FloatTensor
+#dtype = torch.cuda.FloatTensor # Uncomment this to run on GPU
+N = 1024
 
 # Create random input and output data
 A = torch.randn(N, N).type(dtype)
